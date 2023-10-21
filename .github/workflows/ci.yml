@@ -1,12 +1,14 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
+#   pull_request:
+#     branches:
+#       - master
+
+on: [workflow_dispatch]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
